@@ -20,16 +20,16 @@ const Keyboard = {
 
 
         let textarea , h1;
-        h1 = document.createElement('h1');
-        textarea = document.createElement('textarea');
+        h1 = document.createElement("h1");
+        textarea = document.createElement("textarea");
         this.elements.main = document.createElement("div");
         this.elements.keysContainer = document.createElement("div");
 
 
         textarea.classList.add("use-keyboard-input");
-        h1.classList.add('title');
+        h1.classList.add("title");
         document.body.appendChild(h1);
-        h1.innerHTML = 'Для того чтобы переключить язык нажмите сочитание клавиш: "leftShift + leftAlt"';
+        h1.innerHTML = "Для того чтобы переключить язык нажмите сочитание клавиш: \"leftShift + leftAlt\"";
         document.body.appendChild(textarea);
 
         this.elements.main.classList.add("keyboard", "keyboard--hidden");
@@ -82,7 +82,7 @@ const Keyboard = {
 
                 case "del":
                     keyElement.classList.add("keyboard__key--wide");
-                    keyElement.innerHTML = 'del';
+                    keyElement.innerHTML = "del";
 
                     keyElement.addEventListener("click", () => {
                         
@@ -92,7 +92,7 @@ const Keyboard = {
 
                     break;
                 case "shift":
-                         keyElement.innerHTML = 'shift';
+                         keyElement.innerHTML = "shift";
                         keyElement.addEventListener("click", () => {
 
                             this._triggerEvent("oninput");
@@ -101,7 +101,7 @@ const Keyboard = {
                         break;
 
                 case "alt":
-                        keyElement.innerHTML = 'alt';
+                        keyElement.innerHTML = "alt";
                             keyElement.addEventListener("click", () => {
                                 this._triggerEvent("oninput");
                             });
@@ -109,14 +109,14 @@ const Keyboard = {
                             break; 
                 case "ctrl":
                     
-                              keyElement.innerHTML = 'ctrl';
+                              keyElement.innerHTML = "ctrl";
                                 keyElement.addEventListener("click", () => {
                                     this._triggerEvent("oninput");
                                 });
             
                                 break;
                 case "win":
-                                     keyElement.innerHTML = 'win';
+                                     keyElement.innerHTML = "win";
                                      
                                     keyElement.addEventListener("click", () => {
                                         this._triggerEvent("oninput");
@@ -243,7 +243,7 @@ const Keyboard = {
 
     toggleshift(arrayKey){
         
-        this.elements.keysContainer.innerHTML = '';
+        this.elements.keysContainer.innerHTML = "";
         this.elements.keysContainer.appendChild(this._createKeys(arrayKey));
         this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard__key");
         
@@ -251,48 +251,48 @@ const Keyboard = {
 };
 
 const keyLayoutEn = [
-    '`' , "1", "2", "3", "4", "5", "6", "7", "8", "9", "0","-" , "=", "backspace",
-    "tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p","[", "]" , '\\' , "del",
+    "`" , "1", "2", "3", "4", "5", "6", "7", "8", "9", "0","-" , "=", "backspace",
+    "tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p","[", "]" , "\\" , "del",
     "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "enter",
 "done" ,"shift", "z", "x", "c", "v", "b", "n", "m", ",", ".",  "▲", "/", "Shift" , 
    "ctrl", "win", "alt", "space" , "alt" , "◄" , "▼" , "►" , "ctrl"
 ];
 
 const keyLayoutEnShift = [
-    '~' , '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', "backspace",
-    "tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P",'{', '}', '|', "del",
-    "caps", "A", "S", "D", "F", "G", "H", "J", "K", "L", ':', '"', "enter",
-"done" ,"shift", "Z", "X", "C", "V", "B", "N", "M", '<', '>',  "▲", '?', "Shift" , 
+    "~" , "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "backspace",
+    "tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P","{", "}", "|", "del",
+    "caps", "A", "S", "D", "F", "G", "H", "J", "K", "L", ":", "\"", "enter",
+"done" ,"shift", "Z", "X", "C", "V", "B", "N", "M", "<", ">",  "▲", "?", "Shift" , 
    "ctrl", "win", "alt", "space" , "alt" , "◄" , "▼" , "►" , "ctrl"
 ];
 
 const keyLayoutRu = [
-    'ё' , "1", "2", "3", "4", "5", "6", "7", "8", "9", "0","-" , "=", "backspace",
-    "tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з","х", "ъ" , '\\' , "del",
+    "ё" , "1", "2", "3", "4", "5", "6", "7", "8", "9", "0","-" , "=", "backspace",
+    "tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з","х", "ъ" , "\\" , "del",
     "caps", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "enter",
 "done" ,"shift", "я", "ч", "с", "м", "и", "т", "ь", "б", "ю",  "▲", ".", "Shift" , 
    "ctrl", "win", "alt", "space" , "alt" , "◄" , "▼" , "►" , "ctrl"
 ];
 
 const keyLayoutRuShift = [
-    'Ё' , '!', '"', "№", ";", "%", ":", "?", "*", "(", ")","_" , "+", "backspace",
-    "tab", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З","Х", "Ъ" , '/' , "del",
+    "Ё" , "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")","_" , "+", "backspace",
+    "tab", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З","Х", "Ъ" , "/" , "del",
     "caps", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "enter",
 "done" ,"shift", "Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю",  "▲", ".", "Shift" , 
    "ctrl", "win", "alt", "space" , "alt" , "◄" , "▼" , "►" , "ctrl"
 ];
-const keysList = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace',
-  'Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Backslash','Delete',
-  'CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter',
-  "done",'ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'ArrowUp', 'Slash', 'ShiftRight',
-  'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'ControlRight'
+const keysList = ["Backquote", "Digit1", "Digit2", "Digit3", "Digit4", "Digit5", "Digit6", "Digit7", "Digit8", "Digit9", "Digit0", "Minus", "Equal", "Backspace",
+  "Tab", "KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY", "KeyU", "KeyI", "KeyO", "KeyP", "BracketLeft", "BracketRight", "Backslash","Delete",
+  "CapsLock", "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH", "KeyJ", "KeyK", "KeyL", "Semicolon", "Quote", "Enter",
+  "done","ShiftLeft", "KeyZ", "KeyX", "KeyC", "KeyV", "KeyB", "KeyN", "KeyM", "Comma", "Period", "ArrowUp", "Slash", "ShiftRight",
+  "ControlLeft", "MetaLeft", "AltLeft", "Space", "AltRight", "ArrowLeft", "ArrowDown", "ArrowRight", "ControlRight"
 ];
 
 function setLocalStorage() {
-    localStorage.setItem('lang', checkLang);
+    localStorage.setItem("lang", checkLang);
 }
 function getLocalStorage(){
-    if(localStorage.getItem('lang') === 'En'){
+    if(localStorage.getItem("lang") === "En"){
         checkLang = "En";
         Keyboard.init(keyLayoutEn);
     } else {
@@ -301,27 +301,27 @@ function getLocalStorage(){
     }
   }
 
-window.addEventListener('beforeunload', setLocalStorage);
-window.addEventListener('load', getLocalStorage);
+window.addEventListener("beforeunload", setLocalStorage);
+window.addEventListener("load", getLocalStorage);
 
 
 let pressed = new Set();
 let check = 0 ;  
 let checkLang ;
 
-function checkKey(e) {
+function checkKey() {
 
-    if(pressed.has('ShiftLeft') && pressed.has('AltLeft')){
-        if(checkLang === 'En'){
+    if(pressed.has("ShiftLeft") && pressed.has("AltLeft")){
+        if(checkLang === "En"){
             Keyboard.toggleLang(keyLayoutRu);
-            checkLang = 'Ru';
+            checkLang = "Ru";
         }else{
             Keyboard.toggleLang(keyLayoutEn);
-            checkLang = 'En';
+            checkLang = "En";
         }
-    }else if (pressed.has('ShiftLeft') && !pressed.has('AltLeft')){
+    }else if (pressed.has("ShiftLeft") && !pressed.has("AltLeft")){
         check = 1;
-        if(checkLang == 'En'){
+        if(checkLang == "En"){
            
             Keyboard.toggleshift(keyLayoutEnShift);
             
@@ -331,9 +331,9 @@ function checkKey(e) {
     }
 
 
-    else if(!pressed.has('ShiftLeft') && check === 1){
+    else if(!pressed.has("ShiftLeft") && check === 1){
         check = 0;
-        if(checkLang == 'En'){
+        if(checkLang == "En"){
             Keyboard.toggleshift(keyLayoutEn);
             
         }else{
@@ -342,24 +342,24 @@ function checkKey(e) {
     } 
 }
 let index;
-window.addEventListener('keydown',()=>{ 
+window.addEventListener("keydown",()=>{ 
     event.preventDefault();
     pressed.add(event.code);
     document.querySelector(".use-keyboard-input").focus();
     index = keysList.indexOf(event.code);
-    let eventMouse = new Event('click' , {bubbles:true});
-    document.querySelectorAll('.keyboard__key')[index].dispatchEvent(eventMouse);
-    document.querySelectorAll('.keyboard__key')[index].classList.add('keyboard__key--active'); 
+    let eventMouse = new Event("click" , {bubbles:true});
+    document.querySelectorAll(".keyboard__key")[index].dispatchEvent(eventMouse);
+    document.querySelectorAll(".keyboard__key")[index].classList.add("keyboard__key--active"); 
     
   
         checkKey();
     }); 
 
-window.addEventListener('keyup', () =>{
+window.addEventListener("keyup", () =>{
     pressed.forEach(element => {
         if(element === event.code){
             index = keysList.indexOf(event.code);
-            document.querySelectorAll('.keyboard__key')[index].classList.remove('keyboard__key--active'); 
+            document.querySelectorAll(".keyboard__key")[index].classList.remove("keyboard__key--active"); 
         }
     });
     pressed.delete(event.code);
